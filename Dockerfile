@@ -1,13 +1,21 @@
+FROM public.ecr.aws/nginx/nginx:stable-alpine
 
-FROM public.ecr.aws/nginx/nginx:1.26-alpine-perl
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
-COPY public-html/ /usr/share/nginx/html/
+COPY index.html /usr/share/nginx/html/
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# Nginx will start automatically when the container launches
+
+
+#FROM public.ecr.aws/nginx/nginx:1.26-alpine-perl
+#
+#COPY nginx.conf /etc/nginx/nginx.conf
+#
+#COPY index.html /usr/share/nginx/html/
+#
+#EXPOSE 80/tcp
+#
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 
 
 
