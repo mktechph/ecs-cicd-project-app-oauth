@@ -1,6 +1,6 @@
 FROM public.ecr.aws/nginx/nginx:stable-alpine
 
-COPY index.html /usr/share/nginx/html/
+COPY public-html/oauth/ /usr/share/nginx/html/
 
 EXPOSE 80
 
